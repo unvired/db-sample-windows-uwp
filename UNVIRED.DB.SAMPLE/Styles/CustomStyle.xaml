@@ -1,0 +1,377 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="CommonBackground" Color="#ebebf0" />
+    <SolidColorBrush x:Key="SplitViewBackground" Color="#EFF4FA" />
+    <SolidColorBrush x:Key="ForegroundColor" Color="Black" />
+    <SolidColorBrush x:Key="ListViewItemBackground" Color="White" />
+    <SolidColorBrush x:Key="ListViewItemTotalBackground" Color="LightGray" />
+    <SolidColorBrush x:Key="SplitViewListViewItemBackground" Color="White" />
+
+    <SolidColorBrush x:Key="TextForegroundColor" Color="Black" />
+    <SolidColorBrush x:Key="HeadingForgroundColor" Color="#395875" />
+    <SolidColorBrush x:Key="SubHeadingForgroundColor" Color="#427CAC" />
+
+
+
+
+
+
+    <SolidColorBrush x:Key="TextControlBorderBrushDisabled" Color="#395875" />
+    <SolidColorBrush x:Key="TextControlForegroundDisabled" Color="Black" />
+    <!--<SolidColorBrush x:Key="TextControlBackgroundDisabled" Color="#ECEFF1" />-->
+    <SolidColorBrush x:Key="TextControlBackgroundDisabled" Color="#cadbeb" />
+    <!--<SolidColorBrush x:Key="ListViewItemBackground" Color="#cbe2f2" />-->
+    <SolidColorBrush x:Key="CheckBoxBorderBrushCheckedDisabled" Color="#263238" />
+    <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked" Color="#263238" />
+    <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedPointerOver" Color="#263238" />
+    <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedPressed" Color="#263238" />
+    <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeUncheckedPointerOver" Color="#263238" />
+    <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPointerOver" Color="#263238" />
+
+    <Style x:Key="GridBackGroundStyle" TargetType="Grid">
+        <!--<Setter Property="Background" Value="#EDF0F2" />-->
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/Images/PageBachground.jpg" />
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+
+    <!--#region  HeaderTextBlock Style-->
+    <Style x:Key="HeaderTextStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="46" />
+        <Setter Property="Foreground" Value="{StaticResource TextForegroundColor}" />
+        <Setter Property="FontWeight" Value="Light" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Height" Value="Auto" />
+    </Style>
+    <!--#endregion-->
+
+    <!--#region  HeaderTextBlock Style-->
+    <Style x:Key="SubHeaderTextStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="34" />
+        <Setter Property="Foreground" Value="Gray" />
+        <Setter Property="FontWeight" Value="Light" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Height" Value="Auto" />
+    </Style>
+    <!--#endregion-->
+
+    <!--#region Common Square button Style-->
+    <Style x:Key="SquaredButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80" />
+                        </Grid.RowDefinitions>
+                        <Rectangle
+                            Name="Rectangle"
+                            Grid.Row="0"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Fill="{StaticResource CommonBackground}"
+                            Stroke="Transparent"
+                            StrokeThickness="2" />
+                        <ContentPresenter
+                            Name="Content"
+                            Grid.Row="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Content="{TemplateBinding Content}"
+                            FontFamily="Segoe MDL2 Assets"
+                            FontSize="30"
+                            Foreground="{TemplateBinding Foreground}" />
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="PointerOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Rectangle" Storyboard.TargetProperty="Opacity">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="0.7" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Rectangle" Storyboard.TargetProperty="Fill">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Transparent" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#696969" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+
+
+    <Style x:Key="HomePageTileButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="White" />
+        <Setter Property="Padding" Value="0" />
+
+    </Style>
+
+    <!--#region Field and Value  text style-->
+
+    <Style x:Key="FieldNameTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Foreground" Value="{StaticResource TextForegroundColor}" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+
+    </Style>
+    <Style x:Key="FieldValueCommonTextStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="Foreground" Value="{StaticResource TextForegroundColor}" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="FieldValueCommonTextBoxStyle" TargetType="TextBox">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Width" Value="370" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="CornerRadius" Value="2" />
+    </Style>
+
+    <Style x:Key="CommonTextBoxStyle" TargetType="TextBox">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="CornerRadius" Value="2" />
+    </Style>
+
+
+
+    <Style x:Key="ActionButtonStyle" TargetType="Button">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="CornerRadius" Value="2" />
+
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+
+
+    <!--#endregion-->
+
+
+
+    <!--#region SplitView Style Section-->
+
+    <!--  SplitView Header text style  -->
+    <Style x:Key="SplitViewHeaderTextStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="30" />
+        <Setter Property="Foreground" Value="{StaticResource TextForegroundColor}" />
+        <Setter Property="FontWeight" Value="Light" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <!--#region SplitView Button square Styles-->
+    <Style x:Key="SplitViewSquaredButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" MinHeight="60" />
+                        </Grid.RowDefinitions>
+                        <Rectangle
+                            Name="Rectangle"
+                            Grid.Row="0"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Stroke="Transparent"
+                            StrokeThickness="2" />
+                        <ContentPresenter
+                            Name="Content"
+                            Grid.Row="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Content="{TemplateBinding Content}"
+                            FontFamily="Segoe MDL2 Assets"
+                            FontSize="30"
+                            Foreground="{StaticResource TextForegroundColor}" />
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="PointerOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Rectangle" Storyboard.TargetProperty="Opacity">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="0.7" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Rectangle" Storyboard.TargetProperty="Fill">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Transparent" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#696969" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+
+
+    <!--  Style for TextBlock to highlight the separate section in split view  -->
+    <Style x:Key="SplitViewSectionTextStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="FontWeight" Value="SemiLight" />
+        <Setter Property="Foreground" Value="{StaticResource TextForegroundColor}" />
+    </Style>
+
+    <!--  Style for TextBlock to highlight separate section in split view  -->
+    <Style x:Key="SplitViewFieldValueStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="Foreground" Value="Black" />
+    </Style>
+
+    <Style x:Key="SplitViewCheckBoxStyle" TargetType="CheckBox">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FlowDirection" Value="RightToLeft" />
+    </Style>
+
+    <!--#region List View Item Styles-->
+    <Style x:Key="ListViewItemHeaderTextStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Foreground" Value="{StaticResource TextForegroundColor}" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="ListViewSubHeaderStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="Foreground" Value="{StaticResource TextForegroundColor}" />
+    </Style>
+
+    <Style x:Key="ListViewCommonTextStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="Foreground" Value="{StaticResource TextForegroundColor}" />
+    </Style>
+    <!--#endregion-->
+
+    <!--#endregion-->
+
+
+    <Style x:Key="SettingButtonStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Rectangle
+                            Name="Rectangle"
+                            Grid.Row="0"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Stroke="Transparent"
+                            StrokeThickness="2" />
+                        <ContentPresenter
+                            Name="Content"
+                            Grid.Row="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Content="{TemplateBinding Content}"
+                            FontFamily="Segoe MDL2 Assets"
+                            FontSize="18"
+                            Foreground="{StaticResource TextForegroundColor}" />
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="PointerOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Rectangle" Storyboard.TargetProperty="Opacity">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="0.7" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Rectangle" Storyboard.TargetProperty="Fill">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Transparent" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#696969" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="LoginGridBackGround" TargetType="Grid">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/Images/LoginPageBackground.jpg" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

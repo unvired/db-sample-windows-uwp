@@ -1,0 +1,1071 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About Us" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="AboutUs_Heading.Heading" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="AbtUs_AppBuildNumber.Text" xml:space="preserve">
+    <value>Application Build Number</value>
+  </data>
+  <data name="AbtUs_ApplicationName.Text" xml:space="preserve">
+    <value>Application Name</value>
+  </data>
+  <data name="AbtUs_Company.Text" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="AbtUs_Copyrite.Text" xml:space="preserve">
+    <value>Copyright</value>
+  </data>
+  <data name="AbtUs_Credit.Text" xml:space="preserve">
+    <value>Credit</value>
+  </data>
+  <data name="AbtUs_Support.Text" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="AbtUs_TradeMark.Text" xml:space="preserve">
+    <value>TradeMark</value>
+  </data>
+  <data name="AbtUs_FWBuildNumber.Text" xml:space="preserve">
+    <value>Unvired Framework Build Number</value>
+  </data>
+  <data name="AbtUs_Website.Text" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="ACT_Id.Text" xml:space="preserve">
+    <value>ACT Id</value>
+  </data>
+  <data name="Trademark.Text" xml:space="preserve">
+    <value>All trademarks are owned by the respective companies.</value>
+  </data>
+  <data name="AppId.Text" xml:space="preserve">
+    <value>App Id</value>
+  </data>
+  <data name="Application Settings" xml:space="preserve">
+    <value>Application Settings</value>
+  </data>
+  <data name="ApplicationSettings.Heading" xml:space="preserve">
+    <value>Application Settings</value>
+  </data>
+  <data name="AppName.Text" xml:space="preserve">
+    <value>App Name</value>
+  </data>
+  <data name="AskForFrontEndPopup_Message.Text" xml:space="preserve">
+    <value>You have multiple device IDs associated with this application. Please select the correct device ID to use.</value>
+  </data>
+  <data name="AskForFrontEndPopup_Title.Text" xml:space="preserve">
+    <value>Select Frontend User</value>
+  </data>
+  <data name="Attachments" xml:space="preserve">
+    <value>Attachments</value>
+  </data>
+  <data name="Backend Port Not Configured" xml:space="preserve">
+    <value>Backend Port Not Configured</value>
+  </data>
+  <data name="CharmFlyoutLibrary.Text" xml:space="preserve">
+    <value>CharmFlyoutLibrary</value>
+  </data>
+  <data name="Clear Data" xml:space="preserve">
+    <value>Clear Data</value>
+  </data>
+  <data name="ClearDataPopup_CancelBtn.Content" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ClearDataPopup_Message.Text" xml:space="preserve">
+    <value>This will clear all the data associated with the application and restore the application to the freshly installed state(requires application restart). Are you sure you want to continue?</value>
+  </data>
+  <data name="ClearDataPopup_OkBtn.Content" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="ClearDataPopup_Title.Text" xml:space="preserve">
+    <value>Clear Data</value>
+  </data>
+  <data name="Company.Text" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="Company_Alias.Text" xml:space="preserve">
+    <value>Company Alias</value>
+  </data>
+  <data name="Connected" xml:space="preserve">
+    <value>Connected</value>
+  </data>
+  <data name="ConversationId.Text" xml:space="preserve">
+    <value>Conversation Id</value>
+  </data>
+  <data name="DataReceiver.Text" xml:space="preserve">
+    <value>Data Receiver</value>
+  </data>
+  <data name="DataSender.Text" xml:space="preserve">
+    <value>Data Sender</value>
+  </data>
+  <data name="Debug.Content" xml:space="preserve">
+    <value>Debug</value>
+  </data>
+  <data name="Device_Identifier.Text" xml:space="preserve">
+    <value>Device Identifier</value>
+  </data>
+  <data name="Device_Name.Text" xml:space="preserve">
+    <value>Device Name</value>
+  </data>
+  <data name="Domain.Text" xml:space="preserve">
+    <value>Domain</value>
+  </data>
+  <data name="Download_Data.Content" xml:space="preserve">
+    <value>Download Data</value>
+  </data>
+  <data name="Enter Search Term" xml:space="preserve">
+    <value>Enter Search Term</value>
+  </data>
+  <data name="Error.Content" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="FrontEndPopup_CancelBtn.Content" xml:space="preserve">
+    <value>Cancle</value>
+  </data>
+  <data name="Important.Content" xml:space="preserve">
+    <value>Important</value>
+  </data>
+  <data name="Inbox" xml:space="preserve">
+    <value>Inbox</value>
+  </data>
+  <data name="Inbox_Date/Time.Text" xml:space="preserve">
+    <value>Date/Time</value>
+  </data>
+  <data name="Inbox_Heading.Heading" xml:space="preserve">
+    <value>Inbox</value>
+  </data>
+  <data name="IncomingDataHandler.Text" xml:space="preserve">
+    <value>Inbox</value>
+  </data>
+  <data name="Info Message" xml:space="preserve">
+    <value>Info Message</value>
+  </data>
+  <data name="InfoMessage_Heading.Heading" xml:space="preserve">
+    <value>Info Message</value>
+  </data>
+  <data name="InfoMsg_BELid.Text" xml:space="preserve">
+    <value>BE Lid</value>
+  </data>
+  <data name="InfoMsg_BEName.Text" xml:space="preserve">
+    <value>BE Name</value>
+  </data>
+  <data name="InfoMsg_Catagory.Text" xml:space="preserve">
+    <value>Catagory</value>
+  </data>
+  <data name="InfoMsg_Date/Time.Text" xml:space="preserve">
+    <value>Date/Time</value>
+  </data>
+  <data name="InfoMsg_Message.Text" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="InfoMsg_MessageSubType.Text" xml:space="preserve">
+    <value>Message SubType</value>
+  </data>
+  <data name="InfoMsg_MessageType.Text" xml:space="preserve">
+    <value>Message Type</value>
+  </data>
+  <data name="InitialDataDownload.Content" xml:space="preserve">
+    <value>Send Initial Data Download Request</value>
+  </data>
+  <data name="LoginButton.Content" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LoginClearDataCancelBtn.Content" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="LoginClearDataOkBtn.Content" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="LoginHeading.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LoginNewPwCancelBtn.Content" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="LoginNewPwOkBtn.Content" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="LoginNewPwPopup_Message.Text" xml:space="preserve">
+    <value>You will be authenticated with the server. Enter the new password that has been provided to you.</value>
+  </data>
+  <data name="LoginNewPwPopup_Title.Text" xml:space="preserve">
+    <value>Enter Password</value>
+  </data>
+  <data name="Login_ClearDataPopup_Message.Text" xml:space="preserve">
+    <value>This will clear all the data associated with the application and restore the application to the freshly installed state(requires application restart). Are you sure you want to continue?</value>
+  </data>
+  <data name="Login_ClearDataPopup_Title.Text" xml:space="preserve">
+    <value>Clear Data</value>
+  </data>
+  <data name="Login_ClearData_button.Content" xml:space="preserve">
+    <value>Clear Data</value>
+  </data>
+  <data name="Login_ClearData_Message.Text" xml:space="preserve">
+    <value>Touch on 'Clear Data' button to clear all the data associated with the application and restore the application to the freshly installed state.</value>
+  </data>
+  <data name="Login_ClearData_Title.Text" xml:space="preserve">
+    <value>Clear Data</value>
+  </data>
+  <data name="Login_SettingsHeading.Heading" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Login_ViewLogs_Button.Content" xml:space="preserve">
+    <value>View Logs</value>
+  </data>
+  <data name="Login_ViewLogs_Message.Text" xml:space="preserve">
+    <value>Touch on 'View Logs' button to view the logs for this application.</value>
+  </data>
+  <data name="Login_ViewLogs_Title.Text" xml:space="preserve">
+    <value>View Logs</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="Logs_Heading.Heading" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="Log_Level.Text" xml:space="preserve">
+    <value>Log Level</value>
+  </data>
+  <data name="Log_ToServer.Text" xml:space="preserve">
+    <value>To Server</value>
+  </data>
+  <data name="Log_ViaEmail.Text" xml:space="preserve">
+    <value>Via Email</value>
+  </data>
+  <data name="Message Downloaded Successfully" xml:space="preserve">
+    <value>Message Downloaded Successfully</value>
+  </data>
+  <data name="MessageSubType.Text" xml:space="preserve">
+    <value>Message SubType</value>
+  </data>
+  <data name="MessageType.Text" xml:space="preserve">
+    <value>Message Type</value>
+  </data>
+  <data name="NewPassword_Button.Content" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="NewPassword_Message.Text" xml:space="preserve">
+    <value>Touch on 'New Password' button to enter the new password that has been provided to you.</value>
+  </data>
+  <data name="NewPassword_Title.Text" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="Not Connected" xml:space="preserve">
+    <value>Not Connected</value>
+  </data>
+  <data name="Not Running" xml:space="preserve">
+    <value>Not Running</value>
+  </data>
+  <data name="Outbox" xml:space="preserve">
+    <value>Outbox</value>
+  </data>
+  <data name="Outbox_BELid.Text" xml:space="preserve">
+    <value>BE Lid</value>
+  </data>
+  <data name="Outbox_BEName.Text" xml:space="preserve">
+    <value>BE Name</value>
+  </data>
+  <data name="Outbox_CompanyNameSpace.Text" xml:space="preserve">
+    <value>Company Name Space</value>
+  </data>
+  <data name="Outbox_ConversationId.Text" xml:space="preserve">
+    <value>Conversation Id</value>
+  </data>
+  <data name="Outbox_Date/Time.Text" xml:space="preserve">
+    <value>Date/Time</value>
+  </data>
+  <data name="Outbox_FunctionName.Text" xml:space="preserve">
+    <value>Function Name</value>
+  </data>
+  <data name="OutBox_Heading.Heading" xml:space="preserve">
+    <value>Outbox</value>
+  </data>
+  <data name="Outbox_MessageSubType.Text" xml:space="preserve">
+    <value>Message SubType</value>
+  </data>
+  <data name="Outbox_MessageType.Text" xml:space="preserve">
+    <value>Message Type</value>
+  </data>
+  <data name="Outbox_SyncType.Text" xml:space="preserve">
+    <value>Sync Type</value>
+  </data>
+  <data name="Password Field is Empty, Please Enter New Password" xml:space="preserve">
+    <value>Password Field is Empty, Please Enter New Password</value>
+  </data>
+  <data name="Password.Text" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Properties.Text" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="ReqDataPopupCancelBtn.Content" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="ReqDataPopupOkBtn.Content" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="ReqDataPopup_Message.Text" xml:space="preserve">
+    <value>This will send a initial data download request to get all the necessary data for this application.</value>
+  </data>
+  <data name="ReqDataPopup_Title.Text" xml:space="preserve">
+    <value>Are you sure you want to send this request ?</value>
+  </data>
+  <data name="Request sent to server Sucessfully" xml:space="preserve">
+    <value>Request sent to server Sucessfully</value>
+  </data>
+  <data name="Reset Password" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="ResetPwPopup_CancelBtn.Content" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ResetPwPopup_Message.Text" xml:space="preserve">
+    <value>You will be authenticated with the server. Enter the new password that has been providede to you.</value>
+  </data>
+  <data name="ResetPwPopup_OkBtn.Content" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="ResetPwPopup_Title.Text" xml:space="preserve">
+    <value>Enter Password</value>
+  </data>
+  <data name="Running" xml:space="preserve">
+    <value>Running</value>
+  </data>
+  <data name="Sec_Level.Text" xml:space="preserve">
+    <value>Sec Level</value>
+  </data>
+  <data name="Sent Items" xml:space="preserve">
+    <value>Sent Items</value>
+  </data>
+  <data name="SentItems_BELid.Text" xml:space="preserve">
+    <value>BE Lid</value>
+  </data>
+  <data name="SentItems_BEName.Text" xml:space="preserve">
+    <value>BE Name</value>
+  </data>
+  <data name="SentItems_ConversationId.Text" xml:space="preserve">
+    <value>Conversation Id</value>
+  </data>
+  <data name="SentItems_Date/Time.Text" xml:space="preserve">
+    <value>Date/Time</value>
+  </data>
+  <data name="SentItems_EntryDate.Text" xml:space="preserve">
+    <value>Entry Date</value>
+  </data>
+  <data name="SentItems_Heading.Heading" xml:space="preserve">
+    <value>Sent Items</value>
+  </data>
+  <data name="ServerId.Text" xml:space="preserve">
+    <value>Server Id</value>
+  </data>
+  <data name="Server_Id.Text" xml:space="preserve">
+    <value>Server Id</value>
+  </data>
+  <data name="SettingsButton.Content" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SettingsThreads.Text" xml:space="preserve">
+    <value>Threads</value>
+  </data>
+  <data name="SettingsUrl.Text" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="SettingsUser.Text" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="Sqlite.Text" xml:space="preserve">
+    <value>Sqlite(Sqlite.in)</value>
+  </data>
+  <data name="Status.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="StatusTitle.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Status_Heading.Heading" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="SysCrePopupCancelBtn.Content" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="SysCrePopupOkBtn.Content" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="SysCrePopup_Title.Text" xml:space="preserve">
+    <value>Enter Password</value>
+  </data>
+  <data name="SysCre_Password.Text" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="SysCre_PortDescription.Text" xml:space="preserve">
+    <value>Port Description</value>
+  </data>
+  <data name="SysCre_PortName.Text" xml:space="preserve">
+    <value>Port Name</value>
+  </data>
+  <data name="SysCre_PortType.Text" xml:space="preserve">
+    <value>Port Type</value>
+  </data>
+  <data name="SysCre_SaveBtn.Content" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SysCre_SystemDescription.Text" xml:space="preserve">
+    <value>System Description</value>
+  </data>
+  <data name="SysCre_SystemDetails.Text" xml:space="preserve">
+    <value>System Details</value>
+  </data>
+  <data name="SysCre_toggleSwitch.OffContent" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="SysCre_toggleSwitch.OnContent" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="SysCre_UserName.Text" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="System Credentials" xml:space="preserve">
+    <value>System Credentials</value>
+  </data>
+  <data name="SysCre_Heading.Heading" xml:space="preserve">
+    <value>System Credentials</value>
+  </data>
+  <data name="SystemCredentialsDetails_Heading.Heading" xml:space="preserve">
+    <value>System Credentials Details</value>
+  </data>
+  <data name="Term Not Found" xml:space="preserve">
+    <value>Term Not Found</value>
+  </data>
+  <data name="TestConnection.Content" xml:space="preserve">
+    <value>Test Connection</value>
+  </data>
+  <data name="Unvired Inc.Text" xml:space="preserve">
+    <value>Unvired Inc.</value>
+  </data>
+  <data name="unviredCopyrite.Text" xml:space="preserve">
+    <value>@2012.all Right Reserved.</value>
+  </data>
+  <data name="unviredSupport.Text" xml:space="preserve">
+    <value>support@unvired.com</value>
+  </data>
+  <data name="unviredWebsite.Text" xml:space="preserve">
+    <value>www.unvired.com</value>
+  </data>
+  <data name="Url.Text" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="User Name Or Password field is Mandatory" xml:space="preserve">
+    <value>User Name Or Password field is Mandatory.</value>
+  </data>
+  <data name="User_Name.Text" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="ViewLogsPopup_Heading.Heading" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="Enter user name and password" xml:space="preserve">
+    <value>Enter user name and password</value>
+  </data>
+  <data name="User name or and Password field is empty" xml:space="preserve">
+    <value>User name or and Password field is empty</value>
+  </data>
+  <data name="* Tap outside to cancel" xml:space="preserve">
+    <value>* Tap outside to cancel</value>
+  </data>
+  <data name="Client Certificate With HTTPS" xml:space="preserve">
+    <value>Client Certificate With HTTPS</value>
+  </data>
+  <data name="Enter Password" xml:space="preserve">
+    <value>Enter Password</value>
+  </data>
+  <data name="HTTP" xml:space="preserve">
+    <value>HTTP</value>
+  </data>
+  <data name="HTTPS" xml:space="preserve">
+    <value>HTTPS</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Operation not supported in demo mode" xml:space="preserve">
+    <value>Operation not supported in demo mode</value>
+  </data>
+  <data name="Password is Incorrect" xml:space="preserve">
+    <value>Password is Incorrect</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SysCredentialPwIndicator" xml:space="preserve">
+    <value>SysCredentialPwIndicator</value>
+  </data>
+  <data name="This will clear all the data associated with the application and restore the application to the freshly installed state requires application restart Are you sure you want to continue" xml:space="preserve">
+    <value>This will clear all the data associated with the application and restore the application to the freshly installed state(requires application restart). Are you sure you want to continue?</value>
+  </data>
+  <data name="This will send a initial data download request to get all the necessary data for this application" xml:space="preserve">
+    <value>This will send a initial data download request to get all the necessary data for this application.</value>
+  </data>
+  <data name="You will be authenticated with the server Enter the new password that has been provided to you" xml:space="preserve">
+    <value>You will be authenticated with the server. Enter the new password that has been provided to you.</value>
+  </data>
+  <data name="ADS Login" xml:space="preserve">
+    <value>ADS Login</value>
+  </data>
+  <data name="Check_Connectivity.Text" xml:space="preserve">
+    <value>Check Connectivity</value>
+  </data>
+  <data name="Check_Conn_Button.Content" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Company_text.PlaceholderText" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="DB Exception while initializing Application" xml:space="preserve">
+    <value>DB Exception while initializing Application:</value>
+  </data>
+  <data name="DemoMode_Msg.Text" xml:space="preserve">
+    <value>Test application with demo data.</value>
+  </data>
+  <data name="Demo_Mode.Text" xml:space="preserve">
+    <value>Demo Mode</value>
+  </data>
+  <data name="Demo_Mode_Button.Content" xml:space="preserve">
+    <value>Demo Mode</value>
+  </data>
+  <data name="Domain_text.PlaceholderText" xml:space="preserve">
+    <value>Domain</value>
+  </data>
+  <data name="LoginHeaderType.Text" xml:space="preserve">
+    <value>Unvired Login</value>
+  </data>
+  <data name="LoginLog_ViaEmail.Text" xml:space="preserve">
+    <value>Via Email</value>
+  </data>
+  <data name="Login_Type.Text" xml:space="preserve">
+    <value>Login Type</value>
+  </data>
+  <data name="LogsHeading.Text" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="Password Field is Empty Please Enter New Password" xml:space="preserve">
+    <value>Password Field is Empty, Please Enter New Password.</value>
+  </data>
+  <data name="Password_text.PlaceholderText" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="portName_text.PlaceholderText" xml:space="preserve">
+    <value>Port Name</value>
+  </data>
+  <data name="Privacy_Statement.Text" xml:space="preserve">
+    <value>Privacy Statement</value>
+  </data>
+  <data name="SAP Login" xml:space="preserve">
+    <value>SAP Login</value>
+  </data>
+  <data name="trademarkText.Text" xml:space="preserve">
+    <value>All trademarks are owned by the respective companies.</value>
+  </data>
+  <data name="Unvired Login" xml:space="preserve">
+    <value>Unvired Login</value>
+  </data>
+  <data name="Url_text.PlaceholderText" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="UserName_text.PlaceholderText" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="InboxTitle.Title" xml:space="preserve">
+    <value>Inbox</value>
+  </data>
+  <data name="SettingsTitle.Title" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="StatusHeading.Title" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Attachments Inbox" xml:space="preserve">
+    <value>Attachments Inbox</value>
+  </data>
+  <data name="Attachments Outbox" xml:space="preserve">
+    <value>Attachments Outbox</value>
+  </data>
+  <data name="Check Connectivity" xml:space="preserve">
+    <value>Check Connectivity</value>
+  </data>
+  <data name="StatusText" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="AboutUs_title.Title" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="ATTACHMENT_DOWNLOADER_COULD_IO_EXCEPTION_WHILE_TRYING_TO_SAVE_THE_FILE" xml:space="preserve">
+    <value>Could not save the file: IO EXCEPTION while trying to save the file.</value>
+  </data>
+  <data name="ATTACHMENT_DOWNLOADER_COULD_NOT_SAVE_FILE_IN_STREAM_EMPTY" xml:space="preserve">
+    <value>Could not save the file: No data found in the input stream, though the status was success.</value>
+  </data>
+  <data name="AUTHENTICATION_SUCCESSFUL" xml:space="preserve">
+    <value>Authentication Successful</value>
+  </data>
+  <data name="AUTH_ERROR_INVALID_RESPONSE_FROM_SERVER" xml:space="preserve">
+    <value>Cannot authenticate. Invalid response from server. Please try again.</value>
+  </data>
+  <data name="CONFIRMATION_INITIAL_DOWNLOAD" xml:space="preserve">
+    <value>Send request for Initial Data Download?</value>
+  </data>
+  <data name="CONFIRMATION_RESET" xml:space="preserve">
+    <value>This option will clear all the data associated with the application and restore the application to the freshly installed state. Deleted data cannot be recovered. Are you sure you want to clear the data in the application?</value>
+  </data>
+  <data name="ConstrChk.Content" xml:space="preserve">
+    <value>ConstrainedInternetAccess</value>
+  </data>
+  <data name="ConstrChktext.Text" xml:space="preserve">
+    <value>This value indicates captive portal connectivity, where local access to a web portal is provided, but access to the Internet requires that specific credentials are provided via the portal.</value>
+  </data>
+  <data name="DEMO_MODE_MESSAGE" xml:space="preserve">
+    <value>Operation not supported in demo mode</value>
+  </data>
+  <data name="DEMO_MODE_SELECTION_SCREEN_DEMO_MODE" xml:space="preserve">
+    <value>Demo Mode</value>
+  </data>
+  <data name="DEMO_MODE_SELECTION_SCREEN_SETUP" xml:space="preserve">
+    <value>Setup</value>
+  </data>
+  <data name="DEVICE_TYPE_SMART_PHONE" xml:space="preserve">
+    <value>Smart Phone</value>
+  </data>
+  <data name="DEVICE_TYPE_TABLET" xml:space="preserve">
+    <value>Tablet</value>
+  </data>
+  <data name="DisableChk.Content" xml:space="preserve">
+    <value>Disable connection check</value>
+  </data>
+  <data name="DisableChktext.Text" xml:space="preserve">
+    <value>This will disable all connection checking.</value>
+  </data>
+  <data name="InfoMessageHeading.Text" xml:space="preserve">
+    <value>Info Message</value>
+  </data>
+  <data name="IntrChk.Content" xml:space="preserve">
+    <value>InternetAccess</value>
+  </data>
+  <data name="IntrChktext.Text" xml:space="preserve">
+    <value>This will Check for only internet access.</value>
+  </data>
+  <data name="INVALID_CREDENTIALS" xml:space="preserve">
+    <value>Enter valid user id and password</value>
+  </data>
+  <data name="INVALID_PASSWORD" xml:space="preserve">
+    <value>Incorrect password</value>
+  </data>
+  <data name="LocChk.Content" xml:space="preserve">
+    <value>LocalAccess</value>
+  </data>
+  <data name="LocChktext.Text" xml:space="preserve">
+    <value>Local access only.</value>
+  </data>
+  <data name="LOGIN_SCREEN_CANCEL" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="LOGIN_SCREEN_CANNOT_AUTHENTICATE" xml:space="preserve">
+    <value>Cannot authenticate.</value>
+  </data>
+  <data name="LOGIN_SCREEN_CLEAR_DATA" xml:space="preserve">
+    <value>Clear Data</value>
+  </data>
+  <data name="LOGIN_SCREEN_COMPANY_ALIAS" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="LOGIN_SCREEN_CONTACT_ADMINISTRATOR" xml:space="preserve">
+    <value>Contact your administrator.</value>
+  </data>
+  <data name="LOGIN_SCREEN_CUSTOM_DEVICE_ID" xml:space="preserve">
+    <value>Device Id</value>
+  </data>
+  <data name="LOGIN_SCREEN_DB_ERROR" xml:space="preserve">
+    <value>Enter valid user id and password.</value>
+  </data>
+  <data name="LOGIN_SCREEN_DEVICE_TYPE" xml:space="preserve">
+    <value>Device Type</value>
+  </data>
+  <data name="LOGIN_SCREEN_DIALOG_ALERT_TITLE" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="LOGIN_SCREEN_DIALOG_BUTTON_OK" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="LOGIN_SCREEN_DIALOG_TITLE" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="LOGIN_SCREEN_DOMAIN" xml:space="preserve">
+    <value>Domain</value>
+  </data>
+  <data name="LOGIN_SCREEN_FORGOT_PASSWORD" xml:space="preserve">
+    <value>Forgot Password</value>
+  </data>
+  <data name="LOGIN_SCREEN_FORGOT_PASSWORD_MESSAGE" xml:space="preserve">
+    <value>You will be authenticated with the server. Enter the new password that has been provided to you.</value>
+  </data>
+  <data name="LOGIN_SCREEN_INVALID_COMPANY_ALIAS" xml:space="preserve">
+    <value>Enter valid company alias</value>
+  </data>
+  <data name="LOGIN_SCREEN_INVALID_CREDENTIALS" xml:space="preserve">
+    <value>Enter valid user id and password</value>
+  </data>
+  <data name="LOGIN_SCREEN_INVALID_DOMAIN" xml:space="preserve">
+    <value>Enter valid domain</value>
+  </data>
+  <data name="LOGIN_SCREEN_INVALID_PASSWORD" xml:space="preserve">
+    <value>Enter valid password</value>
+  </data>
+  <data name="LOGIN_SCREEN_INVALID_URL" xml:space="preserve">
+    <value>Enter valid url</value>
+  </data>
+  <data name="LOGIN_SCREEN_INVALID_USER_ID" xml:space="preserve">
+    <value>Enter valid user id</value>
+  </data>
+  <data name="LOGIN_SCREEN_LOGIN" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LOGIN_SCREEN_LOGIN_TYPE_ADS" xml:space="preserve">
+    <value>Microsoft(R) ADS Login</value>
+  </data>
+  <data name="LOGIN_SCREEN_LOGIN_TYPE_UNVIRED_ID" xml:space="preserve">
+    <value>Unvired Id Login</value>
+  </data>
+  <data name="LOGIN_SCREEN_NEW_PASSWORD" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="LOGIN_SCREEN_NO_VALID_ERROR" xml:space="preserve">
+    <value>No valid error.</value>
+  </data>
+  <data name="LOGIN_SCREEN_OPTIONS" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="LOGIN_SCREEN_OPTIONS_DIALOG" xml:space="preserve">
+    <value>Select Application Mode</value>
+  </data>
+  <data name="LOGIN_SCREEN_OPTIONS_DIALOG_DEMO" xml:space="preserve">
+    <value>Demo</value>
+  </data>
+  <data name="LOGIN_SCREEN_OPTIONS_DIALOG_LIVE" xml:space="preserve">
+    <value>Live</value>
+  </data>
+  <data name="LOGIN_SCREEN_OPTIONS_LOGIN_TYPES_TITLE" xml:space="preserve">
+    <value>Login Type(s)</value>
+  </data>
+  <data name="LOGIN_SCREEN_PASSWORD" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="LOGIN_SCREEN_RESET" xml:space="preserve">
+    <value>Clear Data</value>
+  </data>
+  <data name="LOGIN_SCREEN_SHOW_URL" xml:space="preserve">
+    <value>demo.unviredcloud.com/UNI/</value>
+  </data>
+  <data name="LOGIN_SCREEN_STANDARD_APPLICATION" xml:space="preserve">
+    <value>Standard Application</value>
+  </data>
+  <data name="LOGIN_SCREEN_TITLE" xml:space="preserve">
+    <value>Unvired Login</value>
+  </data>
+  <data name="LOGIN_SCREEN_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="LOGIN_SCREEN_URL_PREFIX" xml:space="preserve">
+    <value>URL Prefix</value>
+  </data>
+  <data name="LOGIN_SCREEN_USER_ID" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="LOGIN_SCREEN_WAIT" xml:space="preserve">
+    <value>Please wait...</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_APPLICATION_DATA_IBXML" xml:space="preserve">
+    <value>Standard Data Format</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_APPLICATION_DATA_IBXML_EXTERNAL_PUSH_FROM_BACKEND" xml:space="preserve">
+    <value>Standard Data Format - Push</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_APPLICATION_DATA_NATIVE" xml:space="preserve">
+    <value>Custom Data Format</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_APPLICATION_DATA_NATIVE_EXTERNAL_PUSH_FROM_BACKEND" xml:space="preserve">
+    <value>Custom Data Format - Push</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_AUTHENTICATION" xml:space="preserve">
+    <value>Autentication</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_AUTHENTICATION_AND_ACTIVATE" xml:space="preserve">
+    <value>Authenticate and Activate</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_SAP_AUTHENTICATE" xml:space="preserve">
+    <value>SAP Authenticate</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_SYSTEM_ACTIVATION" xml:space="preserve">
+    <value>Activation</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_SYSTEM_APPLICATION_ASSIGN" xml:space="preserve">
+    <value>Application Assign</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_SYSTEM_APPLICATION_UNASSIGN" xml:space="preserve">
+    <value>Application Unassign</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_SYSTEM_DATA_DUMP" xml:space="preserve">
+    <value>Data Dump</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_SYSTEM_ERROR" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_SYSTEM_FRAMEWORK_SETTINGS" xml:space="preserve">
+    <value>Framework Settings</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_SYSTEM_INFO" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_SYSTEM_INITIAL_DATA" xml:space="preserve">
+    <value>Get Initial Data</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_SYSTEM_INITIATE_PULL" xml:space="preserve">
+    <value>Initiate Pull</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_SYSTEM_LOG" xml:space="preserve">
+    <value>Log</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_SYSTEM_LOG_RESET" xml:space="preserve">
+    <value>Log Reset</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_SYSTEM_LOG_SET_DEBUG" xml:space="preserve">
+    <value>Set Log Level to Debug</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_SYSTEM_LOG_SET_ERROR" xml:space="preserve">
+    <value>Set Log Level to Error</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_SYSTEM_MULTIPLE_FRONTEND_USERS" xml:space="preserve">
+    <value>Multiple Frontend Users</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_SYSTEM_PING" xml:space="preserve">
+    <value>Ping</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_SYSTEM_RESET_DATA" xml:space="preserve">
+    <value>Reset Data</value>
+  </data>
+  <data name="MESSAGE_SUBTYPE_SYSTEM_SEND_PUSH_NOTIFICATION_ID" xml:space="preserve">
+    <value>Send Push Notification Id</value>
+  </data>
+  <data name="MESSAGE_TYPE_APPLICATION" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="MESSAGE_TYPE_AUTHENTICATION" xml:space="preserve">
+    <value>Authentication</value>
+  </data>
+  <data name="MESSAGE_TYPE_SYSTEM" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="MESSAGE_TYPE_WIPE" xml:space="preserve">
+    <value>Wipe</value>
+  </data>
+  <data name="Network_Connectivity_Title.Title" xml:space="preserve">
+    <value>Network Connectivity</value>
+  </data>
+  <data name="OutBoxTitle.Title" xml:space="preserve">
+    <value>Outbox</value>
+  </data>
+  <data name="SentItemsTitle.Title" xml:space="preserve">
+    <value>Sent Items</value>
+  </data>
+  <data name="Set_Conn_Button.Content" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="UNI_ERROR_APP_DELETED_OR_NOT_FOUND" xml:space="preserve">
+    <value>Application deleted or not found. Contact your administrator.</value>
+  </data>
+  <data name="UNI_ERROR_APP_NOT_ACTIVE_FOR_USER" xml:space="preserve">
+    <value>Application not active for user. Contact your adminsitrator.</value>
+  </data>
+  <data name="UNI_ERROR_APP_UNDEPLOYED" xml:space="preserve">
+    <value>Application has been undeployed for the user. Contact your administrator.</value>
+  </data>
+  <data name="UNI_ERROR_FE_USER_NOT_FOUND" xml:space="preserve">
+    <value>Device / frontend user not found in the Unvired server. Contact your adminsitrator.</value>
+  </data>
+  <data name="UNI_ERROR_INCORRECT_SERVER_ID" xml:space="preserve">
+    <value>Application communicating with wrong server. Contact your adminsitrator.</value>
+  </data>
+  <data name="UNI_ERROR_PASSWORD_RESET" xml:space="preserve">
+    <value>Password for your user has changed on the server. Enter your new password to reauthenticate and continue using the application.</value>
+  </data>
+  <data name="UNI_ERROR_USER_DISABLED" xml:space="preserve">
+    <value>User id disabled. Contact your administrator.</value>
+  </data>
+  <data name="UNI_ERROR_USER_NOT_FOUND" xml:space="preserve">
+    <value>User id not found in the Unvired server. Contact your administrator.</value>
+  </data>
+  <data name="UNI_RESPONSE_ERROR_500_503" xml:space="preserve">
+    <value>Server cannot process any request at this time. All processing has been stopped on the device. Please try after sometime or contact your administrator.</value>
+  </data>
+  <data name="VERSION_CHANGE_UPGRADE_MESSAGE" xml:space="preserve">
+    <value>Due to a change in the application version an upgrade was required. Application has been reset. Please login again.</value>
+  </data>
+  <data name="WAIT_MESSAGE" xml:space="preserve">
+    <value>Please wait...</value>
+  </data>
+  <data name="WAIT_MESSAGE_FROM_SERVER" xml:space="preserve">
+    <value>Waiting for server to fetch the requested file</value>
+  </data>
+  <data name="Change Theme" xml:space="preserve">
+    <value>Change Theme</value>
+  </data>
+  <data name="DaysText.Text" xml:space="preserve">
+    <value>Days</value>
+  </data>
+  <data name="EndTimeText.Text" xml:space="preserve">
+    <value>End Time</value>
+  </data>
+  <data name="LocationTrackingText.Text" xml:space="preserve">
+    <value>Location Tracking</value>
+  </data>
+  <data name="StartTimeText.Text" xml:space="preserve">
+    <value>Start Time</value>
+  </data>
+  <data name="Location Tracking" xml:space="preserve">
+    <value>Location Tracking</value>
+  </data>
+  <data name="Collapsed" xml:space="preserve">
+    <value>Collapsed</value>
+  </data>
+  <data name="Visible" xml:space="preserve">
+    <value>Visible</value>
+  </data>
+  <data name="s" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LoadingMap" xml:space="preserve">
+    <value>Loading map</value>
+  </data>
+  <data name="NoOfflineMapFoundLocallyPleaseDownload" xml:space="preserve">
+    <value>No offline Map found locally. Please download map</value>
+  </data>
+  <data name="NoOfflineMapFoundLocallyPleaseWaitGatheringAvailableMapOnline" xml:space="preserve">
+    <value>No offline Map found locally Please Wait, Gathering available Map Online</value>
+  </data>
+</root>
