@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <SolidColorBrush x:Key="CommonBackground" Color="#ebebf0" />
-    <SolidColorBrush x:Key="SplitViewBackground" Color="#EFF4FA" />
+    <SolidColorBrush x:Key="SplitViewBackground" Color="WhiteSmoke" />
     <SolidColorBrush x:Key="ForegroundColor" Color="Black" />
     <SolidColorBrush x:Key="ListViewItemBackground" Color="White" />
     <SolidColorBrush x:Key="ListViewItemTotalBackground" Color="LightGray" />
