@@ -2,7 +2,7 @@
 
     <SolidColorBrush x:Key="CommonBackground" Color="#ebebf0" />
     <SolidColorBrush x:Key="SplitViewBackground" Color="WhiteSmoke" />
-    <SolidColorBrush x:Key="ForegroundColor" Color="Black" />
+    <SolidColorBrush x:Key="ForegroundColor" Color="White" />
     <SolidColorBrush x:Key="ListViewItemBackground" Color="White" />
     <SolidColorBrush x:Key="ListViewItemTotalBackground" Color="LightGray" />
     <SolidColorBrush x:Key="SplitViewListViewItemBackground" Color="White" />
@@ -14,6 +14,15 @@
 
 
 
+    <Style
+        x:Key="NavigationBackButtonNormalStyle"
+        BasedOn="{StaticResource NavigationBackButtonNormalStyle}"
+        TargetType="Button">
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+
+
+
 
 
     <SolidColorBrush x:Key="TextControlBorderBrushDisabled" Color="#395875" />
@@ -21,12 +30,16 @@
     <!--<SolidColorBrush x:Key="TextControlBackgroundDisabled" Color="#ECEFF1" />-->
     <SolidColorBrush x:Key="TextControlBackgroundDisabled" Color="#cadbeb" />
     <!--<SolidColorBrush x:Key="ListViewItemBackground" Color="#cbe2f2" />-->
-    <SolidColorBrush x:Key="CheckBoxBorderBrushCheckedDisabled" Color="#263238" />
-    <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked" Color="#263238" />
-    <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedPointerOver" Color="#263238" />
-    <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedPressed" Color="#263238" />
-    <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeUncheckedPointerOver" Color="#263238" />
-    <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPointerOver" Color="#263238" />
+    <SolidColorBrush x:Key="NavigationViewItemForegroundPointerOver" Color="White" />
+    <SolidColorBrush x:Key="NavigationViewItemForegroundSelected" Color="White" />
+    <SolidColorBrush x:Key="NavigationViewItemForegroundSelectedPointerOver" Color="White" />
+    <SolidColorBrush x:Key="NavigationViewItemForegroundPressed" Color="White" />
+    <SolidColorBrush x:Key="NavigationViewItemForegroundSelectedPressed" Color="White" />
+    <SolidColorBrush x:Key="NavigationViewItemForeground" Color="White" />
+    <SolidColorBrush x:Key="NavigationViewBackButtonForeground" Color="White" />
+    <SolidColorBrush x:Key="NavigationViewDefaultPaneBackground" Color="#454545" />
+    <SolidColorBrush x:Key="NavigationViewItemBackgroundSelected" Color="#1677af" />
+    <SolidColorBrush x:Key="NavigationViewItemBackgroundSelectedPointerOver" Color="#1677af" />
 
     <Style x:Key="GridBackGroundStyle" TargetType="Grid">
         <!--<Setter Property="Background" Value="#EDF0F2" />-->
@@ -36,6 +49,14 @@
             </Setter.Value>
         </Setter>
 
+    </Style>
+    <Style x:Key="PageBackgroundImageStyle" TargetType="Grid">
+        <Setter Property="Background" Value="#454545" />
+        <!--<Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/Images/background.jpg" />
+            </Setter.Value>
+        </Setter>-->
     </Style>
 
 

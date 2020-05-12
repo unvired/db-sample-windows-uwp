@@ -5,6 +5,7 @@ using System.Xml.Linq;
 using Unvired.Common.WinRT.Interface;
 using Unvired.Kernel.UWP.Login;
 using UNVIRED.DB.SAMPLE.Views;
+using Utils;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
@@ -64,7 +65,7 @@ namespace UNVIRED.DB.SAMPLE
 
             LoginParameters.AssemblyName = GetType().GetTypeInfo().Assembly.FullName;
             LoginParameters.AppTitle = "Unvired DB Sample";
-            LoginParameters.AppName = "UNVIRED_DB_SAMPLE";
+            LoginParameters.AppName = AppConstants.APP_NAME;
             LoginParameters.Company = "unvired";
             LoginParameters.ShowCompany = true;
             LoginParameters.Protocol = LoginParameters.Protocols.https;
@@ -116,7 +117,7 @@ namespace UNVIRED.DB.SAMPLE
             // download Mobile User along with other customization data.
             // Mobile User has SAP username which is required to fetch data from SAP for that user
 
-            if (Window.Current.Content is Frame frame && !frame.Navigate(typeof(HomePage), null, new SlideNavigationTransitionInfo { Effect = SlideNavigationTransitionEffect.FromRight }))
+            if (Window.Current.Content is Frame frame && !frame.Navigate(typeof(RootPage), null, new SlideNavigationTransitionInfo { Effect = SlideNavigationTransitionEffect.FromRight }))
             {
                 throw new Exception("Failed to create initial page");
             }
@@ -132,7 +133,7 @@ namespace UNVIRED.DB.SAMPLE
 
         public void AuthenticateAndActivationSuccessful()
         {
-            if (Window.Current.Content is Frame frame && !frame.Navigate(typeof(HomePage), null, new SlideNavigationTransitionInfo { Effect = SlideNavigationTransitionEffect.FromRight }))
+            if (Window.Current.Content is Frame frame && !frame.Navigate(typeof(RootPage), null, new SlideNavigationTransitionInfo { Effect = SlideNavigationTransitionEffect.FromRight }))
             {
                 throw new Exception("Failed to create initial page");
             }

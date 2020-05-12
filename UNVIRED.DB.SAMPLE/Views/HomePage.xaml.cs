@@ -28,6 +28,16 @@ namespace UNVIRED.DB.SAMPLE.Views
     /// </summary>
     public sealed partial class HomePage : Page
     {
+        private string _searchString;
+        public string SearchString
+        {
+            get => _searchString;
+            set
+            {
+                _searchString = value;
+                RaisePropertyChanged("SearchString");
+            }
+        }
         public HomePage()
         {
             this.InitializeComponent();
@@ -38,6 +48,8 @@ namespace UNVIRED.DB.SAMPLE.Views
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
+
+        #region Split View region
 
         private void SettingButton_Click(object sender, RoutedEventArgs e)
         {
@@ -94,5 +106,6 @@ namespace UNVIRED.DB.SAMPLE.Views
                 Logger.E($"Exception caught while clearing the application data. Message {ex.Message}");
             }
         }
+        #endregion
     }
 }

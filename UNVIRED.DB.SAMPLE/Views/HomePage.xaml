@@ -8,7 +8,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     DataContext="{Binding RelativeSource={RelativeSource Self}}"
     mc:Ignorable="d">
-    <Grid>
+    <Grid Style="{StaticResource PageBackgroundImageStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="80">
             </RowDefinition>
@@ -25,159 +25,26 @@
             <RowDefinition Height="40">
             </RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="6">
+
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40">
+                <ColumnDefinition>
                 </ColumnDefinition>
                 <ColumnDefinition>
                 </ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button
-                x:Name="SettingButton"
-                Margin="5,0,0,0"
-                HorizontalAlignment="Center"
+            <TextBox
+                Grid.Column="0"
+                Margin="5,0,0,5"
+                HorizontalAlignment="Stretch"
                 VerticalAlignment="Center"
-                Click="SettingButton_Click"
-                Content="&#xE713;"
-                Style="{StaticResource SettingButtonStyle}"
-                ToolTipService.ToolTip="Settings" />
-            <TextBlock
-                Grid.Column="1"
-                VerticalAlignment="Center"
-                FontSize="18"
-                FontWeight="SemiBold"
-                Foreground="{StaticResource ForegroundColor}">
-                <Run Text="Version " />
-                <Run x:Name="ApplicationVersion">
-                </Run>
-            </TextBlock>
+                Text="{Binding SearchString, Mode=TwoWay}"
+                ToolTipService.ToolTip="Search ">
+            </TextBox>
         </Grid>
-        <!--#region Setting SplitView-->
 
-        <SplitView
-            x:Name="SettingSplitView"
-            Grid.Row="0"
-            Grid.RowSpan="9"
-            DisplayMode="Overlay"
-            IsPaneOpen="False"
-            OpenPaneLength="400"
-            PanePlacement="Right">
-            <SplitView.Pane>
-                <Grid
-                    HorizontalAlignment="Stretch"
-                    Background="{StaticResource SplitViewBackground}"
-                    BorderBrush="Black"
-                    BorderThickness="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="50" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <TextBlock
-                        Grid.Row="0"
-                        HorizontalAlignment="Center"
-                        Style="{StaticResource SplitViewHeaderTextStyle}"
-                        Text="Settings" />
-                    <ScrollViewer
-                        Grid.Row="1"
-                        VerticalScrollBarVisibility="Hidden"
-                        VerticalScrollMode="Auto"
-                        ZoomMode="Disabled">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="100" />
-                            </Grid.RowDefinitions>
 
-                            <StackPanel
-                                Grid.Row="1"
-                                Height="100"
-                                VerticalAlignment="Bottom">
-                                <Button
-                                    Height="50"
-                                    HorizontalAlignment="Stretch"
-                                    HorizontalContentAlignment="Stretch"
-                                    Background="Transparent"
-                                    BorderThickness="0">
-                                    <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                                        <Button
-                                            Background="Transparent"
-                                            Content="&#xE160;"
-                                            FontFamily="Segoe MDL2 Assets"
-                                            FontSize="18"
-                                            IsHitTestVisible="False" />
-                                        <TextBlock
-                                            Margin="5,0,0,0"
-                                            VerticalAlignment="Center"
-                                            Style="{StaticResource FieldNameTextBlockStyle}"
-                                            Text="Logs" />
-                                    </StackPanel>
-                                    <Button.Flyout>
-                                        <MenuFlyout Placement="Top">
-                                            <MenuFlyoutItem
-                                                x:Name="EmailBtn"
-                                                Width="380"
-                                                Height="50"
-                                                Click="EmailBtn_Click"
-                                                FontSize="14"
-                                                Icon="Mail"
-                                                Text="Send via Email" />
-                                            <MenuFlyoutItem
-                                                x:Name="SendLogToServerBtn"
-                                                Width="380"
-                                                Height="50"
-                                                Click="SendLogToServerBtn_Click"
-                                                FontSize="14"
-                                                Icon="Send"
-                                                Text="Send to Server" />
-                                            <MenuFlyoutItem
-                                                x:Name="ViewLogBtn"
-                                                Width="380"
-                                                Height="50"
-                                                Click="ViewLogBtn_Click"
-                                                FontSize="14"
-                                                Icon="View"
-                                                Text="View Logs" />
-                                            <MenuFlyoutItem
-                                                x:Name="ClearLogsBtn"
-                                                Width="380"
-                                                Height="50"
-                                                Click="ClearLogsBtn_Click"
-                                                FontSize="14"
-                                                Icon="Delete"
-                                                Text="Clear Logs" />
-                                        </MenuFlyout>
-                                    </Button.Flyout>
-                                </Button>
-                                <Button
-                                    x:Name="ClearDataBtn"
-                                    Height="50"
-                                    HorizontalAlignment="Stretch"
-                                    HorizontalContentAlignment="Stretch"
-                                    Background="Transparent"
-                                    BorderThickness="0"
-                                    Click="ClearDataBtn_Click">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Button
-                                            Background="Transparent"
-                                            Content="&#xE107;"
-                                            FontFamily="Segoe MDL2 Assets"
-                                            FontSize="18"
-                                            IsHitTestVisible="False" />
-                                        <TextBlock
-                                            Margin="5,0,0,0"
-                                            VerticalAlignment="Center"
-                                            Style="{StaticResource FieldNameTextBlockStyle}"
-                                            Text="Clear Data" />
-                                    </StackPanel>
-                                </Button>
-                            </StackPanel>
-                        </Grid>
-                    </ScrollViewer>
-                </Grid>
-            </SplitView.Pane>
-        </SplitView>
 
-        <!--#endregion-->
 
     </Grid>
 </Page>
