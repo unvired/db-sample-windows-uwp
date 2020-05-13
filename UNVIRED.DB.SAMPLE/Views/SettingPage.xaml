@@ -168,7 +168,36 @@
             </Grid>
 
         </Grid>
+        <Grid
+            Grid.Row="2"
+            Height="80"
+            Margin="10,0,10,10"
+            VerticalAlignment="Top"
+            Background="White"
+            CornerRadius="5">
+            <Grid
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="6"
+                HorizontalAlignment="Stretch"
+                Background="#F7F7F7"
+                CornerRadius="5"
+                Tapped="ClearData_Tapped">
 
+
+                <TextBlock
+                    Margin="5,0,0,0"
+                    VerticalAlignment="Center"
+                    FontFamily="Segoe MDL2 Assets"
+                    FontSize="23"
+                    Foreground="Black">
+                    <Run Text="&#xE107;">
+                    </Run>
+                    <Run Text="Clear Data">
+                    </Run>
+                </TextBlock>
+            </Grid>
+        </Grid>
 
 
 

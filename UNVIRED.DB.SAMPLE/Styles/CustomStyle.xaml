@@ -14,11 +14,21 @@
 
 
 
-    <Style
+    <!--<Style
         x:Key="NavigationBackButtonNormalStyle"
         BasedOn="{StaticResource NavigationBackButtonNormalStyle}"
         TargetType="Button">
         <Setter Property="Foreground" Value="White" />
+    </Style>-->
+    <Style x:Key="CommonTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18px" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Padding" Value="10" />
+
+        <Setter Property="VerticalAlignment" Value="Center" />
     </Style>
 
 
@@ -102,7 +112,7 @@
                             Grid.Row="0"
                             HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"
-                            Fill="{StaticResource CommonBackground}"
+                            Fill="WhiteSmoke"
                             Stroke="Transparent"
                             StrokeThickness="2" />
                         <ContentPresenter

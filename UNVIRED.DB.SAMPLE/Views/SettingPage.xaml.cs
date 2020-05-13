@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
+using Unvired.Kernel.Utils;
 using Unvired.Kernel.UWP.Log;
 using Unvired.Kernel.UWP.Login;
 using UNVIRED_REST_SAMPLE.Utility;
@@ -50,6 +52,26 @@ namespace UNVIRED.DB.SAMPLE.Views
             catch (Exception ex)
             {
                 Logger.E($"Exception caught while clearing the application logs. Message {ex.Message}");
+            }
+        }
+
+
+
+        private async void ClearData_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            try
+            {
+                var clearDataConfirmationDialog = Util.CommonContentDialog(Util.GetString("Clear Application Data"), "This will clear all application related data. Are you sure you want to continue?", Util.GetString("Yes"), Util.GetString("Cancel"));
+                var clearDataResult = await clearDataConfirmationDialog.ShowAsync();
+                if (clearDataResult == ContentDialogResult.Primary)
+                {
+                    Task clearData = FrameworkHelper.ClearData();
+                    await clearData;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.E($"Exception caught while clearing the application data. Message {ex.Message}");
             }
         }
     }

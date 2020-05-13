@@ -1,14 +1,22 @@
-﻿using System;
+﻿using Entity;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
+using Unvired.Kernel.Sync;
 using Unvired.Kernel.Utils;
+using Unvired.Kernel.UWP.Constants;
+using Unvired.Kernel.UWP.Core;
+using Unvired.Kernel.UWP.Database;
 using Unvired.Kernel.UWP.Log;
 using Unvired.Kernel.UWP.Login;
+using Unvired.Kernel.UWP.Model;
 using UNVIRED_REST_SAMPLE.Utility;
+using Utils;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -28,6 +36,27 @@ namespace UNVIRED.DB.SAMPLE.Views
     /// </summary>
     public sealed partial class HomePage : Page
     {
+        private CONTACT_HEADER _searchContactInput;
+        public CONTACT_HEADER SearchContactInput
+        {
+            get => _searchContactInput;
+            set
+            {
+                _searchContactInput = value;
+                RaisePropertyChanged("SearchContactInput");
+            }
+        }
+        private CONTACT_HEADER _searchContactOutPut;
+        public CONTACT_HEADER SearchContactOutPut
+        {
+            get => _searchContactOutPut;
+            set
+            {
+                _searchContactOutPut = value;
+                RaisePropertyChanged("SearchContactOutPut");
+            }
+        }
+        internal static readonly DataManagerImpl AppDataManager = ApplicationManager.Instance.GetDataManager();
         private string _searchString;
         public string SearchString
         {
@@ -36,12 +65,18 @@ namespace UNVIRED.DB.SAMPLE.Views
             {
                 _searchString = value;
                 RaisePropertyChanged("SearchString");
+                SearchContact(_searchString);
             }
         }
         public HomePage()
         {
             this.InitializeComponent();
-            ApplicationVersion.Text = LoginParameters.AssemblyVersion;
+            if (ContactHeaderCollection == null) ContactHeaderCollection = new ObservableCollection<List<CONTACT_HEADER>>();
+            SearchContactInput = new CONTACT_HEADER();
+            SearchContactOutPut = new CONTACT_HEADER();
+            SearchSplitView.IsPaneOpen = false;
+            PopulateContact();
+            contactGrid.Visibility = Visibility.Collapsed;
         }
         public event PropertyChangedEventHandler PropertyChanged;
         public void RaisePropertyChanged(string name)
@@ -49,63 +84,206 @@ namespace UNVIRED.DB.SAMPLE.Views
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
-        #region Split View region
-
-        private void SettingButton_Click(object sender, RoutedEventArgs e)
+        private ObservableCollection<List<CONTACT_HEADER>> _contactHeaderCollection;
+        public ObservableCollection<List<CONTACT_HEADER>> ContactHeaderCollection
         {
-            SettingSplitView.IsPaneOpen = true;
+            get => _contactHeaderCollection;
+            set
+            {
+                _contactHeaderCollection = value;
+                RaisePropertyChanged("ContactHeaderCollection");
+            }
         }
 
-        private void EmailBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Logger.SendLogViaEmail();
-        }
-
-        private void SendLogToServerBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Logger.SendLogToServer();
-        }
-
-        private void ViewLogBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Logger.GetLogViewer();
-        }
-
-        private async void ClearLogsBtn_Click(object sender, RoutedEventArgs e)
+        public void PopulateContact()
         {
             try
             {
-                var clearLogConfirmationDialog = Util.CommonContentDialog(Util.GetString("Alert"), "This will clear all the Logs associated with this application. Do you want to clear log", "Yes", "Cancel");
-                var clearLogResult = await clearLogConfirmationDialog.ShowAsync();
+                ContactList.ItemsSource = AppDataManager.Get<CONTACT_HEADER>().OrderBy(x => x.ContactName).ToList();
+            }
+            catch (Exception e)
+            {
 
-                if (clearLogResult == ContentDialogResult.Primary)
+                Logger.E($"Exception caught while fetching the Contact {e.Message}");
+            }
+        }
+
+        public void SearchContact(string searchString)
+        {
+            try
+            {
+                var query = $"SELECT * from {typeof(CONTACT_HEADER).Name} WHERE ContactName LIKE '%{searchString}%' OR Phone LIKE '%{searchString}%'";
+                ContactList.ItemsSource = AppDataManager.ExecuteDeferredQuery(typeof(CONTACT_HEADER).Name, query);
+            }
+            catch (Exception e)
+            {
+
+                Logger.E($"Exception caught while searching the Contact {e.Message}");
+            }
+        }
+
+        private async void SearchContactClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+                if (string.IsNullOrEmpty(contactNameInputText.Text) && string.IsNullOrEmpty(contactIdInputText.Text))
                 {
-                    Logger.DeleteLogs();
+                    validationfield.Visibility = Visibility.Visible;
+                    validationMessage.Text = "Please enter at least one Field";
+                    return;
+                }
+                else
+                {
+                    SearchContactInput.ContactName = contactNameInputText.Text;
+                    SearchContactInput.ContactId = string.IsNullOrEmpty(contactIdInputText.Text) ? 0 : int.Parse(contactIdInputText.Text);
+                    validationfield.Visibility = Visibility.Collapsed;
+
+                    await CallPAForContact(SearchContactInput);
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Logger.E($"Exception caught while Searching contacts {ex.Message}");
+
+            }
+
+        }
+        private async Task CallPAForContact(CONTACT_HEADER weatherHeaderInput)
+        {
+            Util.ShowProgressDialog("Please wait getting the weather");
+            try
+            {
+
+                var iSyncResponse = await SyncEngine.Instance.SubmitInForeground(MessageRequestType.RQST,
+              weatherHeaderInput, null, AppConstants.PA_GET_CONTACT, false);
+                var response = (SyncBEResponse)iSyncResponse;
+                var infoMessages = response.InfoMessages;
+
+                if (infoMessages != null && infoMessages.Any())
+                {
+                    foreach (var infoMessage in infoMessages)
+                    {
+                        if (!infoMessage.Category.Equals((ISyncResponse.RESPONSE_STATUS.FAILURE).ToString())) continue;
+                        Util.HideProgressDialog();
+                        var result = Util.FailureAlert("Error", infoMessage.Message, "OK");
+                        await result.ShowAsync();
+                        Logger.E($"Error occur while receiving the response {infoMessage.Message}");
+                        return;
+                    }
+                }
+
+                if (response.ResponseStatus == ISyncResponse.RESPONSE_STATUS.SUCCESS)
+                {
+                    var result = Util.InformationAlert("Information", "Successfully Downloaded", "OK");
+                    await result.ShowAsync();
+                    contactGrid.Visibility = Visibility.Visible;
+                    BindResponseFromUMP(response.DataBEs);
+                }
+
+                else
+                {
+                    await Util.InformationAlert("Alert..!", $"Please enter City Name", "OK").ShowAsync();
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.E($"Exception caught while getting document {e.Message}");
+            }
+            Util.HideProgressDialog();
+        }
+        private void BindResponseFromUMP(Dictionary<string, Dictionary<DataStructure, List<DataStructure>>> dataBEs)
+        {
+            try
+            {
+
+                for (int i = 0; i < dataBEs.Count; i++)
+                {
+                    var item = dataBEs.ElementAt(i);
+                    if (item.Key.Equals("CONTACT"))
+                    {
+                        for (int j = 0; j < item.Value.Count; j++)
+                        {
+                            var headerData = (item.Value).ElementAt(j);
+
+                            SearchContactOutPut = (CONTACT_HEADER)headerData.Key;
+                            contactNameText.Text = SearchContactOutPut.ContactName;
+                            phoneNumberText.Text = SearchContactOutPut.Phone;
+                            emailText.Text = SearchContactOutPut.Email;
+                        }
+                    }
+                }
+
+
+            }
+            catch (Exception e)
+            {
+                Logger.E($"Exception caught while binding data to the physical inventory detail page {e.Message}");
+            }
+        }
+
+
+
+        private void GetContacts_Click(object sender, RoutedEventArgs e)
+        {
+            SearchSplitView.IsPaneOpen = true;
+            validationfield.Visibility = Visibility.Collapsed;
+            contactGrid.Visibility = Visibility.Collapsed;
+            contactIdInputText.Text = contactNameInputText.Text = string.Empty;
+        }
+
+        private async void closeSpliview_Click(object sender, RoutedEventArgs e)
+        {
+            if (SearchContactOutPut.ContactId == null)
+            {
+                SearchSplitView.IsPaneOpen = false;
+            }
+            else
+            {
+                var confirmationDialog = Util.CommonContentDialog(Util.GetString("Alert"), "Do you want to save this result?", Util.GetString("Yes"), Util.GetString("No"));
+                var result = await confirmationDialog.ShowAsync();
+                if (result == ContentDialogResult.Primary)
+                {
+                    try
+                    {
+                        AppDataManager.InsertOrUpdateBasedOnGid<CONTACT_HEADER>(SearchContactOutPut);
+                        ContactList.ItemsSource = AppDataManager.Get<CONTACT_HEADER>().OrderBy(x => x.ContactName).ToList();
+                    }
+                    catch (Exception ex)
+                    {
+                        Logger.E($"Exception caught while adding a contact {ex.Message}");
+
+                    }
+                    SearchSplitView.IsPaneOpen = false;
+                }
+                else if (result == ContentDialogResult.Secondary)
+                {
+                    SearchSplitView.IsPaneOpen = false;
+                }
+            }
+
+        }
+
+        private void contactIdInputText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(contactIdInputText.Text) && contactIdInputText.Text.Length > 0)
+                {
+                    bool isNumeric = Util.IsNumeric(contactIdInputText.Text);
+                    if (!isNumeric)
+                    {
+                        contactIdInputText.Text = contactIdInputText.Text.Substring(0, contactIdInputText.Text.Length - 1);
+                        contactIdInputText.Select(contactIdInputText.Text.Length, 0);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                Logger.E($"Exception caught while clearing the application logs. Message {ex.Message}");
+                Logger.E($"Exception caught while last focus command executing {ex.Message}");
             }
         }
-
-        private async void ClearDataBtn_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                var clearDataConfirmationDialog = Util.CommonContentDialog("Clear Application Data", "This will clear all application related data. Are you sure you want to continue?", Util.GetString("Yes"), Util.GetString("Cancel"));
-                var clearDataResult = await clearDataConfirmationDialog.ShowAsync();
-                if (clearDataResult == ContentDialogResult.Primary)
-                {
-                    Task clearData = FrameworkHelper.ClearData();
-                    await clearData;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.E($"Exception caught while clearing the application data. Message {ex.Message}");
-            }
-        }
-        #endregion
     }
 }

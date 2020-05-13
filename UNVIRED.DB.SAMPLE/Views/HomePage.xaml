@@ -8,7 +8,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     DataContext="{Binding RelativeSource={RelativeSource Self}}"
     mc:Ignorable="d">
-    <Grid Style="{StaticResource PageBackgroundImageStyle}">
+    <Grid Background="WhiteSmoke">
         <Grid.RowDefinitions>
             <RowDefinition Height="80">
             </RowDefinition>
@@ -25,12 +25,38 @@
             <RowDefinition Height="40">
             </RowDefinition>
         </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition>
+                </ColumnDefinition>
+                <ColumnDefinition Width="80">
+                </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Foreground="Black"
+                Style="{StaticResource HeaderTextBlockStyle}"
+                Text="Contact List">
+            </TextBlock>
+            <Button
+                Grid.Column="1"
+                Margin="0,0,10,0"
+                HorizontalAlignment="Stretch"
+                Click="GetContacts_Click"
+                Content="&#59542;"
+                Style="{StaticResource SquaredButton}"
+                ToolTipService.ToolTip="Get Contacts">
+            </Button>
+
+        </Grid>
 
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition>
                 </ColumnDefinition>
-                <ColumnDefinition>
+                <ColumnDefinition Width="*">
                 </ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBox
@@ -38,11 +64,235 @@
                 Margin="5,0,0,5"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Center"
-                Text="{Binding SearchString, Mode=TwoWay}"
+                Background="White"
+                PlaceholderText="Search Contact"
+                Style="{StaticResource CommonTextBoxStyle}"
+                Text="{Binding SearchString, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 ToolTipService.ToolTip="Search ">
             </TextBox>
         </Grid>
 
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition>
+                </ColumnDefinition>
+                <ColumnDefinition Width="*">
+                </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ListView
+                x:Name="ContactList"
+                Grid.Row="5"
+                Margin="0,5,0,0"
+                IsHitTestVisible="True"
+                IsItemClickEnabled="False"
+                ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                ScrollViewer.ZoomMode="Disabled"
+                SelectionMode="None">
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                        <Setter Property="Padding" Value="0" />
+                        <Setter Property="Margin" Value="5,0,0,5" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Height="110" Background="White">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50">
+                                </RowDefinition>
+                                <RowDefinition>
+                                </RowDefinition>
+                                <RowDefinition>
+                                </RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                                Grid.Row="0"
+                                Margin="10,0,0,0"
+                                Style="{StaticResource SubheaderTextBlockStyle}"
+                                Text="{Binding ContactName, Mode=TwoWay}">
+                            </TextBlock>
+                            <TextBlock
+                                Grid.Row="1"
+                                Foreground="SlateGray"
+                                Style="{StaticResource CommonTextBlockStyle}"
+                                Text="{Binding Phone, Mode=TwoWay}">
+                            </TextBlock>
+                            <TextBlock
+                                Grid.Row="2"
+                                Foreground="SlateGray"
+                                Style="{StaticResource CommonTextBlockStyle}"
+                                Text="{Binding Email, Mode=TwoWay}">
+                            </TextBlock>
+
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+
+        <SplitView
+            x:Name="SearchSplitView"
+            Grid.Row="0"
+            Grid.RowSpan="8"
+            DisplayMode="Inline"
+            IsPaneOpen="True"
+            OpenPaneLength="460"
+            PanePlacement="Right">
+            <SplitView.Pane>
+                <Border BorderBrush="LightGray" BorderThickness="1">
+                    <Grid Background="{StaticResource SplitViewBackground}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Button
+                                Grid.Column="0"
+                                Margin="10,0,0,0"
+                                VerticalAlignment="Center"
+                                Click="closeSpliview_Click"
+                                Content="&#xE711;"
+                                IsHitTestVisible="{Binding IsCloseButtonEnable, Mode=TwoWay}"
+                                Style="{StaticResource SplitViewSquaredButton}" />
+                            <TextBlock
+                                Grid.Column="1"
+                                Style="{StaticResource SplitViewHeaderTextStyle}"
+                                Text="Get Contacts" />
+                        </Grid>
+                        <Grid Grid.Row="1" Width="450">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="5" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="40" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="160" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="5,0,0,0"
+                                VerticalAlignment="Center"
+                                Style="{StaticResource FieldNameTextBlockStyle}"
+                                Text="Contact ID" />
+                            <TextBlock
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="5,0,0,0"
+                                VerticalAlignment="Center"
+                                Style="{StaticResource FieldNameTextBlockStyle}"
+                                Text="Name" />
+
+                            <TextBox
+                                x:Name="contactIdInputText"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Width="280"
+                                Margin="5,0,5,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Style="{StaticResource FieldValueCommonTextBoxStyle}"
+                                TextChanged="contactIdInputText_TextChanged" />
+                            <TextBox
+                                x:Name="contactNameInputText"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Width="280"
+                                Margin="5,0,5,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Style="{StaticResource FieldValueCommonTextBoxStyle}" />
+
+
+                            <Border
+                                x:Name="validationfield"
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                Width="280"
+                                Height="40"
+                                Margin="5"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Background="#f2dede"
+                                BorderThickness="1"
+                                CornerRadius="5">
+                                <TextBlock
+                                    x:Name="validationMessage"
+                                    Margin="10,0,0,0"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    FontSize="14"
+                                    Foreground="DarkRed" />
+                            </Border>
+
+                            <Button
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Width="280"
+                                Margin="5,0,5,0"
+                                Background="#03375e"
+                                Click="SearchContactClick"
+                                Content="Search"
+                                Style="{StaticResource ActionButtonStyle}" />
+
+
+
+                            <Grid
+                                x:Name="contactGrid"
+                                Grid.Row="5"
+                                Grid.ColumnSpan="2"
+                                Height="110"
+                                Background="White">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50">
+                                    </RowDefinition>
+                                    <RowDefinition>
+                                    </RowDefinition>
+                                    <RowDefinition>
+                                    </RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                    x:Name="contactNameText"
+                                    Grid.Row="0"
+                                    Margin="10,0,0,0"
+                                    Foreground="Black"
+                                    Style="{StaticResource SubheaderTextBlockStyle}">
+                                </TextBlock>
+                                <TextBlock
+                                    x:Name="phoneNumberText"
+                                    Grid.Row="1"
+                                    Foreground="SlateGray"
+                                    Style="{StaticResource CommonTextBlockStyle}">
+                                </TextBlock>
+                                <TextBlock
+                                    x:Name="emailText"
+                                    Grid.Row="2"
+                                    Foreground="SlateGray"
+                                    Style="{StaticResource CommonTextBlockStyle}">
+                                </TextBlock>
+
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </SplitView.Pane>
+        </SplitView>
 
 
 

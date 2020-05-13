@@ -40,7 +40,9 @@
             Foreground="Black"
             Style="{StaticResource HeaderTextBlockStyle}"
             Text="Add Contact">
+
         </TextBlock>
+
         <TextBlock
             Grid.Row="1"
             HorizontalAlignment="Right"

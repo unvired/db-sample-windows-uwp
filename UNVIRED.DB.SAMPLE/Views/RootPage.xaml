@@ -11,9 +11,9 @@
     <Grid Style="{StaticResource PageBackgroundImageStyle}">
         <NavigationView
             x:Name="rootNavigationView"
-            BackRequested="rootNavigationView_BackRequested"
             Foreground="White"
-            IsBackEnabled="True"
+            IsBackButtonVisible="Collapsed"
+            IsBackEnabled="False"
             IsSettingsVisible="True"
             IsTabStop="False"
             ItemInvoked="rootNavigationView_ItemInvoked"
@@ -29,14 +29,10 @@
                     Tag="Common_Home_Page" />
                 <NavigationViewItem
                     x:Name="OrderListView"
-                    Content="Order List"
+                    Content="Add Contacts"
                     Icon="AddFriend"
                     Tag="AddContact_Page" />
-                <NavigationViewItem
-                    x:Name="MapDetailPage"
-                    Content="Map"
-                    Icon="Download"
-                    Tag="Map_Page" />
+
             </NavigationView.MenuItems>
             <Frame x:Name="contentFrame" />
         </NavigationView>
